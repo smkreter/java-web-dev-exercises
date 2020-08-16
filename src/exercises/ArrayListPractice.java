@@ -18,7 +18,6 @@ public class ArrayListPractice {
         //System.out.println(myArrayList);
 
         Integer sum = 0;
-        // LOL this is not how you do for loops
         for (int i = 0; i < myArrayList.size(); i++) {
             sum += myArrayList.get(i);
         }
@@ -26,6 +25,25 @@ public class ArrayListPractice {
 
         System.out.println(sum);
 
+        ArrayList<String> wordArrayList = new ArrayList<>();
+        wordArrayList.add("farts");
+        wordArrayList.add("butts");
+        wordArrayList.add("fartbutt");
+        wordArrayList.add("stink");
+        wordArrayList.add("Gustopher");
+        wordArrayList.add("buddy");
+        wordArrayList.add("Gusseroo");
+        //System.out.println(wordArrayList);
+
+        for (int i = 0; i < wordArrayList.size(); i++) {
+           // if (wordArrayList.get(i).toCharArray().length === 5) {
+                //System.out.println(wordArrayList.get(i));
+                String[] arrayVariable = wordArrayList.get(i).split("");
+                if (arrayVariable.length == 5) {
+                    System.out.println(wordArrayList.get(i));
+                }
+           // }
+        }
 
     }
 }
