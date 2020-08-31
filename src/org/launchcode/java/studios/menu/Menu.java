@@ -22,4 +22,15 @@ public class Menu {
     public ArrayList<MenuItem> getItems() {
         return items;
     }
+    //add and remove items from the menu
+    public ArrayList<MenuItem> addItem(MenuItem someMenuItem) {
+        items.add(someMenuItem);
+        return items;
+    }
+    public ArrayList<MenuItem> removeItem(MenuItem someMenuItem) {
+        if (items.contains(someMenuItem)) {
+            items.remove(someMenuItem);
+        }
+        return items;
+    }
 }
