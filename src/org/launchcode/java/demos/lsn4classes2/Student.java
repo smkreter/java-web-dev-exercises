@@ -1,5 +1,7 @@
 package org.launchcode.java.demos.lsn4classes2;
 
+import java.util.Objects;
+
 public class Student {
 
     private static int nextStudentId = 1;
@@ -30,20 +32,48 @@ public class Student {
 
 
      //TODO: Uncomment and complete the getGradeLevel method here:
-//    public String getGradeLevel() {
-//        // Determine the grade level of the student based on numberOfCredits
-//    }
+    public String getGradeLevel() {
+        String gradeLevel;
+        if (this.numberOfCredits > 89) {
+            gradeLevel = "Senior";
+        } else if (this.numberOfCredits > 59) {
+            gradeLevel = "Junior";
+        } else if (this.numberOfCredits > 29) {
+            gradeLevel = "Sophomore";
+        } else gradeLevel = "Freshman";
+        return gradeLevel;
+   }
 
     // TODO: Complete the addGrade method.
     public void addGrade(int courseCredits, double grade) {
         // Update the appropriate fields: numberOfCredits, gpa
+        //this.numberOfCredits += courseCredits;
+        this.gpa = ((this.numberOfCredits * this.gpa) + (courseCredits*grade))/(this.numberOfCredits + courseCredits);
+        this.numberOfCredits += courseCredits;
     }
 
     // TODO: Add your custom 'toString' method here. Make sure it returns a well-formatted String rather
     //  than just the class fields.
+    public String toString() {
+        return this.name + " (Credits: " + this.numberOfCredits + ", GPA: " + this.gpa + ")";
+    }
 
     // TODO: Add your custom 'equals' method here. Consider which fields should match in order to call two
     //  Student objects equal.
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return studentId == student.studentId;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(studentId);
+    }
 
     public String getName() {
         return name;
@@ -85,5 +115,7 @@ public class Student {
         System.out.println(sally);
         sally.addGrade(25, 3.8);
         System.out.println(sally);
+        System.out.println(sally.getGradeLevel());
+        System.out.println(sally.getGpa());
     }
 }

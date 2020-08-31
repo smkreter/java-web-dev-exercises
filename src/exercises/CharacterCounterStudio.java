@@ -5,14 +5,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class CharacterCounterStudio {
-    /*
-    String mySentence = "I love the baby giant panda; I'd welcome one to my veranda. I never worry, wondering maybe, whether it isn't giant baby. I leave such matters to the scientists-- the giant baby and baby giantists. I simply want a veranda and a giant baby giant panda.";
-     */
-    // for each str.charAt(i)
 
-    // if the char isn't a key in the hashmap, make it a key
-    // make its value one
-    // if the char IS a key already in the hashmap, add one to the value of that key
 
     public static void main(String[] args) {
         String mySentence = "I love the baby giant panda; I'd welcome one to my veranda. I never worry, wondering maybe, whether it isn't giant baby. I leave such matters to the scientists-- the giant baby and baby giantists. I simply want a veranda and a giant baby giant panda.";
@@ -26,12 +19,11 @@ public class CharacterCounterStudio {
             if (!sentenceHashMap.containsKey(searchedChar)) {
                 sentenceHashMap.put(searchedChar, 1);
             } else {
-                sentenceHashMap.get(searchedChar)++;
+                Integer oldValue = sentenceHashMap.get(searchedChar);
+                sentenceHashMap.replace(searchedChar, oldValue+1);
             }
-
-
         }
-        //System.out.println(sentenceHashMap);
+        System.out.println(sentenceHashMap);
     }
 
 }
