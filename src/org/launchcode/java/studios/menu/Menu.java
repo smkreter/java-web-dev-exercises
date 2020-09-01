@@ -1,6 +1,6 @@
 package org.launchcode.java.studios.menu;
 
-package org.launchcode;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
 public class Menu {
@@ -19,6 +19,7 @@ public class Menu {
     public Date getLastUpdated() {
         return lastUpdated;
     }
+
     public ArrayList<MenuItem> getItems() {
         return items;
     }
@@ -33,4 +34,14 @@ public class Menu {
         }
         return items;
     }
+
+    public void printAll() {
+        Object[] menuArray = this.items.toArray();
+        for (int i = 0; i < items.size(); i++) {
+            System.out.println(menuArray[i]);
+        }
+
+    }
+
+
 }

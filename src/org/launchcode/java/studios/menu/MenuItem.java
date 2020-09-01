@@ -1,6 +1,7 @@
 package org.launchcode.java.studios.menu;
 
-package org.launchcode;
+import java.util.Objects;
+
 public class MenuItem {
     private double price;
     private String description;
@@ -24,5 +25,30 @@ public class MenuItem {
     public void setNew(boolean aNew) {
         isNew = aNew;
     }
-    //
+
+    public boolean getNewness() {
+        return isNew;
+    }
+
+    public String toString() {
+        String newNote = " (New)";
+        if (this.isNew) {
+            return "Item: " + this.description + " || " + this.price + newNote;
+        } else return "Item: " + this.description + " || " + this.price;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MenuItem menuItem = (MenuItem) o;
+        return Double.compare(menuItem.price, price) == 0 &&
+                Objects.equals(description, menuItem.description) &&
+                Objects.equals(category, menuItem.category);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(price, description, category);
+    }
 }
