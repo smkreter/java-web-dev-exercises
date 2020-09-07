@@ -33,8 +33,8 @@ public class MenuItem {
     public String toString() {
         String newNote = " (New)";
         if (this.isNew) {
-            return "Item: " + this.description + " || " + this.price + newNote;
-        } else return "Item: " + this.description + " || " + this.price;
+            return "~*~ " + this.description + " || " + this.price + newNote;
+        } else return "~*~ " + this.description + " || " + this.price;
     }
 
     @Override

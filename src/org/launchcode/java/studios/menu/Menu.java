@@ -34,6 +34,14 @@ public class Menu {
         }
         return items;
     }
+/*
+    public String toString() {
+        Object[] menuArray = this.items.toArray();
+        for (int i = 0; i < items.size(); i++) {
+            (menuArray[i]).toString();
+        }
+    }
+ */
 
     public void printAll() {
         Object[] menuArray = this.items.toArray();
