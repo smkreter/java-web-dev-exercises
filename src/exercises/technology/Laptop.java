@@ -1,4 +1,5 @@
 package exercises.technology;
 
-public class Laptop {
+public class Laptop extends Computer{
+
 }
