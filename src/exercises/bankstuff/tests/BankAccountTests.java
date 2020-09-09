@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
-
+/*
 public class BankAccountTests {
     private BankAccount testAccount;
     @Before
@@ -34,3 +34,5 @@ public class BankAccountTests {
         //transfer
         //check balance
 }
+
+ */

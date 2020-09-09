@@ -1,6 +1,15 @@
 package exercises.technology;
 
-public class Computer {
+public class Computer extends AbstractEntity{
+    //brings in ID from AbstractEntity
+    double ID = nextId;
+
+    //stores things in binary
+    private String basicLanguage = "binary";
+    public String getBasicLanguage() {
+        return basicLanguage;
+    }
+
     //has an amount of information it can store
     private double storageAmount;
     public double getStorageAmount() {
@@ -18,14 +27,14 @@ public class Computer {
     }
     //should be able to tell us about its specs
     public String specsStatement() {
-        "This machine has " + this.storageAmount + " gb of storage and runs on " + this.operatingSystem;
+        return "This machine has " + this.storageAmount + " gb of storage and runs on " + this.operatingSystem;
     }
     public boolean checkNetworkConnectivity() {
         if (homeNetwork != null) {
             return true;
         } else return false;
     }
-    Computer(double storageAmount, String homeNetwork, String operatingSystem) {
+    public Computer(double storageAmount, String homeNetwork, String operatingSystem) {
         this.storageAmount = storageAmount;
         this.homeNetwork = homeNetwork;
         this.operatingSystem = operatingSystem;
