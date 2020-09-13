@@ -5,11 +5,11 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
-/*
+
 public class BankAccountTests {
     private BankAccount testAccount;
     @Before
-    BankAccount testAccount = new BankAccount(accountNumber);
+    BankAccount testAccount = new BankAccount(10);
     //bank accounts have
         //bank acct number
         //routing #
@@ -35,4 +35,4 @@ public class BankAccountTests {
         //check balance
 }
 
- */
+
